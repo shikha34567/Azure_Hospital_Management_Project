@@ -1,0 +1,46 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+  steps:
+
+  # Step 1: Get code
+  - checkout: self
+
+  # Step 2: Setup Python
+  - task: UsePythonVersion@0
+    inputs:
+        versionSpec: '3.x'
+          displayName: "Set up Python"
+
+          # Step 3: Install dependencies
+          - script: |
+              python -m pip install --upgrade pip
+                  pip install -r requirements.txt
+                    displayName: "Install dependencies"
+
+                    # Step 4: Run simple test
+                    - script: |
+                        python -c "print('Hospital Management System Pipeline Running Successfully')"
+                          displayName: "Run Test Script"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
