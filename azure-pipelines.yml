@@ -13,7 +13,7 @@ steps:
 
 - script: |
     python -m pip install --upgrade pip
-    pip install -r HospitalProject/requirements.txt
+    pip install -r Azure_Hospital_Management_Project/requirements.txt
   displayName: 'Install dependencies'
 
 - script: |
